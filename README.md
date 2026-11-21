@@ -42,7 +42,7 @@ The objective of both modules was to recover the password of the supplied encryp
 
 The provided `My Locked PDF1.pdf` was obtained for the lab. The file was password-protected, so its contents could not initially be accessed without the correct password.
 
-![Password-protected PDF before recovery](images/pdflocked.png)
+![Password-protected PDF before recovery](pdflocked.png)
 
 ### Step 2: Install and configure John the Ripper Jumbo
 
@@ -60,13 +60,13 @@ The command output included `PDF` among the supported formats. Johnny was config
 
 The following screenshot records the executable configuration screen during setup. It shows the earlier core executable path (`/usr/sbin/john`), which had to be replaced with the Jumbo path above.
 
-![Johnny executable settings during configuration](images/Johnexecutable.png)
+![Johnny executable settings during configuration](Johnexecutable.png)
 
 ### Step 3: Extract the PDF hash
 
 The encrypted PDF was processed with the PDF hash extractor described in the assignment. The extracted value began with `$pdf$4*4*128*...`, identifying it as a PDF-compatible hash representation.
 
-![Extracted PDF hash](images/hash.png)
+![Extracted PDF hash](hash.png)
 
 ### Step 4: Save the hash to a text file
 
@@ -76,13 +76,13 @@ The complete extracted hash was saved as a single entry in `~/Documents/hash/has
 cat ~/Documents/hash/hash.txt
 ```
 
-![PDF hash saved in hash.txt](images/hashtxt.png)
+![PDF hash saved in hash.txt](hashtxt.png)
 
 ### Step 5: Load the hash into Johnny GUI
 
 Johnny was opened, the saved hash file was selected through **Open password file**, and the PDF hash was recognized. The interface identified the format as `PDF`.
 
-![PDF hash loaded into Johnny GUI](images/johnnyGUI.png)
+![PDF hash loaded into Johnny GUI](johnnyGUI.png)
 
 ### Step 6: Recover the password
 
@@ -92,13 +92,13 @@ A password recovery attack was completed using the JTR/Johnny workflow. Johnny r
 good-luck
 ```
 
-![Successful password recovery in Johnny](images/crackedpassword.png)
+![Successful password recovery in Johnny](crackedpassword.png)
 
 ### Step 7: Verify access to the PDF
 
 The recovered password was used to open the protected PDF. The document displayed its congratulatory completion page, confirming that the recovered password worked.
 
-![Unlocked PDF verification](images/pdfunloacked.png)
+![Unlocked PDF verification](pdfunloacked.png)
 
 **Module 1 result:** Successful — the PDF password was recovered and the document opened.
 
@@ -108,25 +108,25 @@ The recovered password was used to open the protected PDF. The document displaye
 
 The NetworkWalks Hash Calculator was opened in Firefox. The **PDF** tab was selected because the **File** tab only produces ordinary file checksums, not the PDF password-verification hash needed for this exercise.
 
-![NetworkWalks Hash Calculator interface](images/NW-hashcalculator.png)
+![NetworkWalks Hash Calculator interface](NW-hashcalculator.png)
 
 ### Step 2: Extract the encrypted PDF hash
 
 `My Locked PDF1.pdf` was selected in the PDF tab. The calculator recognized the document as encrypted and displayed a hash beginning with `$pdf$...`. The full hash was copied for use in the Password Cracker.
 
-![NetworkWalks PDF hash extraction result](images/NW-hash.png)
+![NetworkWalks PDF hash extraction result](NW-hash.png)
 
 ### Step 3: Open the NetworkWalks Password Cracker
 
 The browser-based Password Cracker was opened. Its interface provided a field for the extracted PDF hash, a built-in password list, and an option to upload a `.txt` wordlist.
 
-![NetworkWalks Password Cracker ready for input](images/NW-passwordcracker.png)
+![NetworkWalks Password Cracker ready for input](NW-passwordcracker.png)
 
 ### Step 4: Run the dictionary attack
 
 The PDF hash was pasted into the Password Cracker. An initial test with the built-in list of 100 passwords exhausted the list without a match. A larger wordlist was then used for the successful attempt.
 
-![Password Cracker during dictionary attack](images/hashcracker.png)
+![Password Cracker during dictionary attack](hashcracker.png)
 
 ### Step 5: Record the successful result
 
@@ -138,7 +138,7 @@ good-luck
 
 The successful attempt's screenshot shows the tool testing candidates from a list of 3,556 entries and finding a match near the end of the run.
 
-![NetworkWalks successful password recovery](images/NW-crackedpassword.png)
+![NetworkWalks successful password recovery](NW-crackedpassword.png)
 
 ### Step 6: Verify the recovered password
 
@@ -193,4 +193,4 @@ Both Week 3 practical modules were completed successfully on Ubuntu Linux. John 
 
 ### GitHub image display note
 
-Keep `REPORT.md` at the repository root and upload the `images/` directory alongside it. The relative paths such as `![Example](images/NW-crackedpassword.png)` will render the screenshots **inside the report** on GitHub. The image files must be committed with exactly these names and capitalization.
+Keep `README.md` and all screenshot `.png` files together in the repository root. The image references use filenames such as `![Example](NW-crackedpassword.png)` so GitHub displays each screenshot directly in the README. Preserve the exact filenames and capitalization.
