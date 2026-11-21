@@ -191,6 +191,3 @@ Both Week 3 practical modules were completed successfully on Ubuntu Linux. John 
 
 ---
 
-### GitHub image display note
-
-Keep `README.md` and all screenshot `.png` files together in the repository root. The image references use filenames such as `![Example](NW-crackedpassword.png)` so GitHub displays each screenshot directly in the README. Preserve the exact filenames and capitalization.
